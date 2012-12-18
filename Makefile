@@ -26,6 +26,11 @@ OBJS= \
 	signal.o \
 	main.o
 
+default: check forth
+
+check:
+	[ `uname -m` != x86_64 ]
+
 forth: $(OBJS)
 	gcc $(OBJS) $(LIBS) -o forth
 

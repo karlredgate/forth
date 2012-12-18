@@ -1,0 +1,2480 @@
+see #user
+#user
+' #user
+>user
+see >user
+drop
+' #user
+>body
+>user
+bye
+words
+see /wordlist
+see cells
+see /cell
+see place
+see pack
+see cmove
+bye
+see cmove
+showstack
+' cmove
+@
+do-primitive
+do-create
+drop
+clear
+' @ 
+@
+do-primitive
+clear
+: foo
+dup @ do-primitive = if
+." primitive "
+.name cr
+exit
+then
+;
+' @
+foo
+bye
+bye
+see +
+bye
+bye
+see /token
+bye
+bye
+bye
+bye
+bye
+bye
+words
+also
+get-order showstack
+also
+clear get-order
+order
+previous clear get-order
+vocs
+see abort"
+bye
+: foo
+true abort" Hello" ;
+see foo
+bye
+true abort" Hello"
+;
+foo
+see foo
+see true
+words
+see xor
+see do-primitive
+do-primitive 
+@
+showstack
+origin
+drop
+here origin - .d
+here origin - .d cr
+drop
+here origin - /token /mod cr
+.d
+d#
+see unloop
+: \
+-1 parse 2drop ;
+\ this is a test of the
+: foo
+true
+\ this is a test
+;
+clear
+forget foo
+bye
+: foo
+\ this is at s
+true
+\ emergeny
+4 3 + ;
+see foo
+bye
+see ;
+: \ -1 parse 2drop ; immediate
+: foo 
+\ foasfgsdfgh
+-1 2 3 + 
+;
+see foo
+bye
+s" foo"
+bye
+showstack
+type
+HOME getenv
+type
+bye
+showstack
+drop
+type
+bye
+showstack
+type
+HOME
+(getenv)
+drop
+type
+getenv HOME drop type
+getenv HOME drop type cr
+bye
+HOME (getenv) if type then
+;
+foo cr
+pwd
+bye
+bye
+bye
+see pwd
+cd
+showstack
+clear
+chdir
+sh
+sh ls
+!ls
+\ he
+see \
+clear
+getenv PATH drop type
+getenv PATH
+getenv HOME
+clear
+HOME (getenv)
+drop
+type
+see HOME
+: foo
+parse-word type ascii : emit 
+;
+see foo
+see [char]
+: ascii
+parse-word drop c@ literal
+; immediate
+see ascii
+clear
+see literal
+: foo
+parse-word type ascii : 
+emit
+;
+foo bar
+foo PATH
+getenv PATH
+clear
+see getenv
+: bar parse-word ;
+parse-word PATH
+type
+getenv HOME
+see getenv 
+: getenv parse-word 2dup type ascii = emit (getenv) if type then ;
+getenv HOME
+see getenv
+' getenv >body 40 dump
+99a38 .name
+979b0 .name
+97ff0 .name
+97f70 .name
+97b4c .name
+3d emit
+97394 .name
+see getenv
+getenv PATH
+getenv HOME
+bye
+showstack
+drop type
+getenv PATH
+drop type
+getenv SHELL drop type cr
+: printenv 2dup type ascii = emit getenv if type then cr ;
+see printenv
+: [char]  parse-word drop c@ literal ; immediate
+clear
+immediate
+clear
+: printenv 2dup type ascii = emit getenv if type then cr ;
+: printenv 2dup type [char] = emit getenv if type then cr ;
+: printenv
+2dup type
+[char] =
+65 emit
+see [char]
+bye
+clear
+: printenv 2dup type [char] = emit getenv if type then cr ;
+see literal
+bye
+2dup type
+[char[
+bye
+;
+bye
+clear
+: printenv
+2dup type
+[char] = 
+: printenv 2dup type
+[char]   = 
+see [char]
+' unnest .
+see ;
+bye
+parse-word 2dup type drop c@ 
+literal
+;
+showstack
+immediate
+clear
+see immediate
+: printenv
+[char] =
+: [char]
+parse-word 2dup type .s
+drop .s
+c@ .s
+literal
+; immediate
+clear
+: printenv
+[char] =
+3d emit
+see [char]
+see >name
+see l>name
+lastacf
+>name
+dup c@
+clear
+lastacf
+>link
+>name
+clear
+lastacf
+>link
+l>name
+c@ 
+reveal
+clear
+lastacf >name c@
+bye
+: [char]  parse-word drop c@ literal ; immediate
+lastacf .name
+lastacf >name c@
+clear
+: printenv 2dup type [char] = emit getenv if type then cr ; 
+: [char] parse-word .s
+drop .s
+c@ .s
+literal .s
+;
+immediate
+: printenv
+[char] =
+3d emit
+see [char]
+: [char] parse-word drop c@ literal ;
+see [char]
+immediate
+see [char]
+see literal
+: printenv
+[char] =
+: printenv 
+[ 3d literal ]
+;
+see printenv
+printenv
+emit
+see [char]
+bye
+see [char]
+: foo 
+3 4 ;
+see [char]
+: printenv
+[char] =
+;
+see printenv
+see foo
+' foo 40 dump
+9c7ec .name
+9905c .name
+99440 .name
+do-colon .
+99450 .name
+99170 .name
+bye
+: foo 3 4 ;
+see foo
+: printenv
+[char] =
+;
+see foo
+bye
+' literal 40 dump
+; literal .
+' literal .
+99b24 .name
+99b4c .name
+99ae4 .name
+99168 .name
+showstack
+: printenv
+[ ' lit ,
+3d , ]
+;
+see printenv
+printenv
+' literal
+immediate?
+?immediate
+ls
+bye
+showstack
+: foo 3 4 ; 
+see foo
+see [char[
+see [char]
+: printenv 
+[char] =
+;
+see printenv
+' printenv dup . cr 40 dump
+bye
+showstack
+: foo 3 4 ; 
+: printenv
+[char] =
+;
+ ' printenv dup . cr 40 dump
+bye
+showstack
+: foo 3 4 ; 
+: printenv
+[char] =
+;
+' printenv dup . cr 40 dump
+9c878 10 mod
+2 *
+space
+spaces
+bye
+showstack
+: foo 3 4 ; 
+: printenv
+[char] =
+;
+' printenv dup . cr 40 dump
+bye
+showstack : foo 3 4 ; : printenv
+[char] =
+;
+' printenv dup . cr 40 dump
+see printenv
+' unnest
+drop
+see foo
+' foo 100 dump
+see name,
+8 talign
+8
+talign
+bye
+: printenv 2dup type [char] = emit
+getenv if type then cr ;
+printenv HOME
+: printenv parse-word 2dup type [char] = emit (getenv) if type then cr ; 
+printenv HOME
+printenv PATH
+printenv HOSTNAME
+bye
+: foo
+4 3 + ;
+showstack
+foo
+see get-input
+clear
+see evaluate
+-1 parse foo
+-1 parse foo here pack
+clear
+here count type
+ parse-word  foo pad pack
+drop
+pad
+count 
+type
+pad count evaluate
+bye
+showstack
+foo
+clear
+parse-word foo pad pack
+pad count type
+clear
+pad count evaluate
+bye
+showstack
+parse-word foo here pack
+drop
+here count type
+here count evaluate
+bye
+showstack
+foo 3 4 5 + + .version
+pad count type cr
+pad count evaluate
+bye
+showstack
+foo 3 4 5 + + .version
+pad count type cr
+pad count evaluate
+clear
+bye
+words
+printenv HOME
+bye
+printenv PATH
+printenv foo
+printenv cd
+printenv pushd
+pwd
+words
+here origin - .d
+here origin - .
+bye
+here origin - .
+here origin - .d
+order
+bye
+see pad
+see 2swap
+see cells
+see *
+see unnest
+see rp!
+primitives
+see lose
+see do-constant
+do-constant
+showstack
+@
+.d
+do-constant @ @ 
+.
+do-constant @ @ u.
+?
+see ?
+bye
+showstack
+foo
+see fload
+see included
+see include-file
+: foo
+-1 parse evaluate
+;
+foo 4 5 + .
+foo 4 5 + . cr
+.
+foo 4 5 + . cr
+foo 4 5 + . cr file @ . cr
+file @ .
+foo 4 5 + . cr source-id . cr
+bye
+see included
+see include-file
+bye
+dead @
+dea0 @
+bye
+showstack
+foo
+bye
+see file-read
+see read-file
+: fload 
+parse-word included
+;
+fload base.fth
+see included
+bye
+fload base.fth
+bye
+fload base.fth
+bye
+fload base.fth
+bye
+see [char]
+bye
+bye
+bye
+bye
+bye
+see [char]
+see \
+\ foo is  ate st
+: bar \ foo sdafg 
+3 4 + \ dfgskjgfd
+;
+see bar
+bye
+bye
+: printenv parse-word 2dup type [char] = emit (getenv) if type then cr ;
+printenv HOME
+see printenv
+: printenv parse-word 2dup type [char] : emit (getenv) if type then cr ;
+printenv HOME
+bye
+bye
+see see
+lastacf .name
+see (see)
+' see 
+(see)
+bye
+' see >body 40 dump
+bye
+' see >body 40 dump
+9dcbc .name
+9eb90 .name
+' (see) >body 100 dump
+9b254 .name
+9b1cc .name
+9b070 .name
+9b2fc .name
+bye
+see see
+bye
+see see
+see ."
+bye
+see see
+bye
+' see .:
+bye
+oldsee see
+oldsee (see)
+bye
+see nsee
+see see
+see n(see)
+bye
+see n(see)
+see (see)
+see if
+bye
+see see
+see (see)
+see n(see)
+nsee nsee
+bye
+see mark-forward
+' mark-forward . cr
+bye
+: foo
+true if
+." true " cr
+then
+;
+see if
+see foo
+foo
+: bar 
+true if ." true " cr then ." it worked" cr ; 
+bar
+bye
+nsee (see)
+bye
+9eabc .name
+words
+// hello this is a test
+bye
+showstack
+foo
+clear
+dead foo !
+foo @
+.d cr
+babe .d
+bye
+here
+[
+base(
+;
+bye
+base(
+see base(
+bye
+showstack
+pad
+here
+decimal
+128 +
+clear
+bye
+." hello this is a test "
+3 4 + ;
+showstack
+foo cr
+bye
+@ >r get-order nip r> swap set-order
+;
+see (does>)
+bye
+create ,
+does>
+@ . cr ;
+4 foo bar
+see bar
+bar
+dead foo baz
+baz
+bye
+also foo
+showstack
+get-order 
+' foo .
+' foo . cr
+' foo >body @ . cr
+: bar 3 4 + ; 
+see bar
+previous
+clear
+get-order 
+clear
+see bar
+also foo
+definitions
+: baz 5 6 + ;
+see baz
+previous definitions
+see baz
+also foo
+see baz
+previous
+forth-wordlist vocabulary: forth
+see forth
+get-order 
+clear
+also forth
+get-order
+clear
+bye
+1024 buffer: foo
+foo . cr
+' foo >body @ .
+bye
+1024 buffer: foo
+showstack
+1024
+allocate
+abort
+see abort
+bye
+1024 buffer: foo
+foo . cr
+foo @ .
+foo 1024 dump
+1024 hex .
+decimal
+1024 .
+base @ .
+base @ .d
+foo 1024 dump
+base @ .d
+decimal
+1024 .d
+1024 .
+1024
+showstack
+hex
+foo 400 dump
+400 buffer: bar
+bar 400 dump
+here .
+bye
+see nsee
+see see
+see (see)
+see n(see)
+nsee nsee
+see .:
+see n.:
+' n.: >body 100 dump
+' n.: >body 100 ldump
+clear
+5f4d0 .name
+5e4b8 .name
+5ebac .name
+5e1cc .name
+bye
+nsee nsee
+nsee n.:
+see n.:
+5e168 .name
+bye
+nsee nsee
+see nsee
+see n.:
+bye
+nsee nsee
+see nsee
+see .:
+see n."
+see n.:
+' .: >body 40 dump
+6008c .name
+5f094 .name
+5eb64 .name
+5e394 .name
+see .type
+bye
+' .type >body 40 dump
+5e254 .name
+5eb64 .name
+bye
+fload see.fth
+bye
+see see
+' see >body 40 dump
+bye
+' dump 40 dump
+bye
+' dump 40 dump
+' dump .
+fload see.fth
+see see
+' see 40 dump
+5d048 .name
+do-colon .
+5fae0 .name
+60e54 .name
+fload see
+fload see.fth
+bye
+see see
+.s
+bye
+see see
+' see (see)
+' see .:
+' see .type
+: foo .s ; 
+foo
+bye
+see see
+fload see.fth
+see see
+5fae0 .name
+fload see.fth
+see see
+fload see.fth
+see see
+fload see.fth
+see see
+bye
+: knr  ." tos: " dup . ."  Stack: " .s cr ;
+knr
+: .type
+;
+bye
+showstack
+dead beef
+see see
+see .s
+depth .
+:w
+bye
+see see
+depth .
+showstack
+sp@
+bye
+depth .
+dead
+depth . cr
+beef
+depth . cr
+.s
+clear
+fload see.fth
+knr
+dead
+knr
+beef
+knr
+fload see.fth
+knr
+knr cr
+(.s)
+' knr >body 40 dump
+5e254 .name
+clear
+5f4d0 .name
+5fe7c .name
+knr
+: .knr
+depth 0= if ." empty" cr exit then
+dup dup 0 do
+dup pick u.
+1-
+loop
+drop
+;
+.knr
+dead
+.knr
+bye
+fload see.fth
+see see
+see .:
+bye
+see .:
+knr
+fload see.fth
+see see
+see ."
+see .:
+.s
+showstack
+' .:
+(see)
+' .:
+dup @
+do-variable
+-
+drop
+dup
+@
+do-variable
+=
+drop
+dup 
+@
+do-colon
+=
+.d
+dup
+.name
+fload see.fth
+see see
+.
+see see
+' see .
+' see .cr
+' see . cr
+clear
+' see
+. cr
+see see
+clear
+: knr
+begin
+." begin "
+true while
+." while " cr
+repeat
+;
+knr
+' knr >body 100 dump
+5e3e4 .nam3
+5e3e4 .name
+drop
+5ecbc .name 
+bye
+showstack
+0 , 
+here 
+-
+/token /
+.d
+bye
+see see
+see (see)
+bye
+see .:
+see (see)
+fload see.fth
+see (see)
+bye
+.s
+' user@
+.s
+.name
+bye
+fload see.fth
+see map-wordlist
+bye
+see see
+see wordlist>xt
+bye
+bye
+bye
+bye
+see see
+bye
+printenv PATH
+see getenv
+see (getenv)
+getenv PATH
+type
+showstack
+getenv PATH
+drop
+type
+ls
+words
+see do-create
+see do-does
+bye
+bye
+bye
+see dump
+dump
+see dump
+' hex ' decimal ' dump (patch
+patch hex decimal dump
+patch decimal hex dump
+see dump
+bye
+bye
+showstack
+lastacf 
+bye
+knr
+showstack
+' knr
+addr knr
+bye
+knr
+: foo ." tested" cr ;
+' foo is knr
+knr
+bye
+: foo ." junk is be loaded from " 2dup type cr ; 
+' foo is autoload-hook
+see foo
+: PATH " PATH" ;
+PATH getenv drop type
+PATH
+showstack
+type
+PATH getenv
+drop type
+PATH (getenv)
+drop type
+clear
+ls
+words
+see see
+sed ump
+see dump
+words
+bye
+here
+fence
+showstack
+!
+see ualloc
+bye
+showstack
+@ .
+#user @ . cr
+user# 
+bye
+debug
+@
+'tib @
+#user 
+@
+bye
+sp0
+@ .
+#order 
+@
+current 
+@
+context
+@
+clear
+file
+' file >body @
+up@
+swap cells
++
+clear
+' #user >body @
+up@ 
++
+@
+bye
+showstack
+' #source >body @
+#user @ 
+#user c@
+clear
+#user c@
+#user @
+up@ 40 dump
+here .
+63c4c .name
+bye
+: foo 4 3 + ;
+forget foo
+lastacf .name
+: foo 4 3 + ;
+bye
+' cold-chain >body @ (see)
+' cold-chain >body @ >body @ (see)
+bye
+'hold @ .
+cold-chain
+'hold @ .
+'hold @ . cr
+cold-chain
+'hold @ . cr
+bye
+'hold @ .
+bye
+bye
+dead
+dead.beef
+deadbeef
+clear
+: h#
+base( hex parse-word interpret-word )base ;
+: d# base( decimal parse-word interpret-word )base ;
+h# dead
+d# 16
+d# 1024
+d# 4096
+.d
+.d cr
+decimal
+h# 400
+bye
+here .
+pad
+.
+here d# 128 +
+showstack
+pad
+bye
+base @ .
+base @ .d
+base @ .d cr
+bye
+base( decimal 1024 )base
+see base(
+bye
+base( decimal 1024 )base
+: foo
+44
+5 + ;
+see foo
+showstack
+clear
+bye
+: foo
+34
+5 +
+;
+see foo
+foo
+' foo >body 30 dump
+bye
+see foo
+: bar d# 34 5 + ; 
+see bar
+see d#
+showstack
+d# 34
+bye
+d# 34
+: foo d# 34 5 + ;
+see foo
+0ead.beef
+0eadbeef
+eedface0eadbeef
+clear
+see bye
+words
+see spaces
+see space
+see emit
+see bl
+: bar c" this is a test" ;
+see bar
+342
+clear
+bar
+count
+type
+: baz
+s" this is another test " ;
+baz
+type
+see patch
+bye
+bye
+3 foo: bar
+' bar 
+showstack
+1
+over 
+>body
+-rot
+cells
+swap
+-
+bye
+get-order .s
+clear
+elf
+get-order .s
+clear
+definitions
+: elf-map
+." Map in elf file"
+;
+words
+forth definitions
+words
+bye
+elf definitions
+: elf-map ." mep in elf file" ;
+words
+bye
+elf definitions
+: elf-map ." map in" ;
+words
+forth definitions
+words
+bye
+see words
+words
+also decompiler
+words
+definitions
+words
+bye
+bye
+bye
+order
+' order
+.s
+(see)
+see order
+bye
+bye
+bye
+see order
+bye
+see (.")
+see type
+see emit
+words
+see >number
+see throw
+see context
+see save-input
+see pad
+see skip-string
+see codefield
+see header
+see name,
+: foo: 
+create ,
+does> dup body> .name
+." : " @ . cr 
+;
+30 foo: bar
+bar
+include test
+fload test.fth
+ls
+bye
+foo showstack
+(system)
+bye
+foo (system)
+ls
+: ls " ls" (system) ;
+ls
+see $cat
+: vi
+" vi " pad cmove
+-1 parse pad 3 + cmove ;
+vi foo.c
+bye
+" vi " pad place
+-1 parse pad count + place
+pad count type cr 
+;
+vi file.c
+bye
+ls
+ls *.c
+see ls
+see system-command
+patch type (system) system-command
+see system-command
+vi foo.c
+pad 30 dump
+vi foo.c
+pad 30 dump
+bye
+see order
+ls
+pwd
+see system-command
+: foo " vi " pad place ;
+foo
+pad 30 dump
+see concat
+: bar -1 parse ;
+bar knr type
+type
+: bar -1 parse type ;
+bar test hhlkj
+: baz
+" vi " pad place " junk" pad concat
+;
+baz pad 30 dump
+see concat
+: baz " vi " pad place " junk" pad ;
+baz
+showstack
+2dup +!
+pad 30 dump
+clear
+baz
+2dup
+tuck
+@
++
+!
+baz
+pad 30 dump
+pad .
+pad . cr
+bye
+vi foo.c
+ls
+ls *.c
+ls *
+see ls
+see system-command
+ls * 
+ls *.c 
+ls *.c   
+ls *.c    *.fth
+vi memory.c
+see system-command
+patch type (system) system-command
+vi memory.c
+pad 30 dump
+vi memory.c
+pad 30 dump
+bye
+make
+bye
+vi init.c
+bye
+quit
+bye
+drop type
+bye
+bye
+bye
+see restart
+executable-name count type
+bye
+bye
+ls
+words
+see words
+see >xt$
+order
+bye
+ls
+see ls
+see system-command
+bye
+: foo 
+1000000 0 do
+loop
+;
+foo
+: foo 
+100 0 do loop ;
+foo
+: foo 1000 0 do loop ;
+foo
+: foo 10000 0 do loop ;
+: foo 100000 0 do loop ;
+foo
+: foo 100000 0 do i . loop ;
+foo
+see asii
+see ascii
+ls
+more base.fth
+words
+vi memory.c 
+vi README
+ls
+bye
+type
+.s
+.
+bye
+u.
+u. cr
+see u.
+see (u.)
+see (ud.)
+see #s
+see #
+see >digit
+bye
+showstack
+clear
+10
+.d
+10
+h#
+drop
+hex
+30 
++
+27 +
+emit
+see (ud.)
+see #s
+see #
+decimal
+10
+>digit
+hex
+emit
+decimal
+345
+s>d
+base @
+s>d
+d/mod
+rot drop
+rot
+>digit emit cr
+base @ s>d d/mod rot drop rot emit cr
+base @ s>d d/mod rot drop rot >digit emit cr
+2drop
+56789
+s>d
+base @ s>d d/mod rot drop rot >digit emit cr
+2drop
+deadbeef
+hex
+45678
+s>d
+base @ s>d d/mod rot drop rot >digit emit cr
+2drop
+feadbeef
+s>d
+base @ s>d d/mod rot drop rot >digit emit cr
+base @ 
+s>d
+d/mod
+rot 
+drop
+rot
+dup .d
+decimal
+clear
+3456788
+hex
+dead
+s>d
+base @ s>d d/mod rot drop rot >digit emit cr
+drop
+s>d
+base @ s>d d/mod rot drop rot >digit emit cr
+clear
+: foo " dead" ;
+foo
+>number
+see >number
+bye
+clear
+hex
+dead
+deadbeef
+drop
+deadbee
+8 <<
+<<
+see <<
+bye
+see lshift
+deadbeef
+showstack
+dup .d
+u.
+bye
+dead
+deadbeef
+clear
+bye
+.
+deadbeed
+.
+deadbeed
+u.
+showstack
+clear
+deadbeef
+s>d
+drop
+see s>d
+0
+drop
+s>d
+see #
+base @ s>d d/mod
+rot drop rot >digit
+emit
+base @ s>d d/mod
+rot drop rot >digit emit cr
+base @ s>d d/mod
+rot drop rot >digit emit cr
+base @ s>d d/mod
+rot drop rot >digit emit cr
+base @ s>d d/mod
+rot drop rot >digit emit cr
+base @ s>d d/mod
+rot drop rot >digit emit cr
+base @ s>d d/mod
+rot drop rot >digit emit cr
+base @ s>d d/mod
+rot drop rot >digit emit cr
+clear
+deadbeef
+s>d
+base @ s>d d/mod
+rot drop rot
+dup .d
+>digit
+emit cr
+see .
+see (.)
+see (d.)
+see u.
+see (u.)
+see (ud.)
+hex
+.
+see .
+see (.)
+see (d.)
+decimal
+.
+hex
+deadbeef
+s>d
+.
+. cr
+deadbeef
+s>d
+see #s
+see W
+see #
+base @ .d
+base @ s>d
+d/mod
+bye
+bye
+showstack
+bye
+clear
+dead
+deadbeef
+clear
+deadbeef
+decimal
+hex
+see d.
+see (d.)
+see (.)
+bye
+clear
+deadbeef
+bye
+clear
+deadbeef
+see u.
+clear
+see u.
+see (u.)
+patch 0 s>d (u.)
+see (u.)
+deadbeef
+.
+bye
+showstack
+deadbeef
+bye
+drop 
+dup
+strlen
+type
+dup strlen type cr
+bye
+drop dup strlen type
+dup strlen type
+bye
+drop
+dup strlen type cr
+bye
+deadbeef
+clear
+bye
+executable-name @ dup strlen type cr
+bye
+bye
+bye
+see order
+see wordlist>xt
+see user-matches?
+see map-wordlist
+see .name
+see invalid-xt?
+see tab
+bye
+bye
+more init.c
+less init.c
+see more
+clear
+ls
+clear
+ls
+ls
+clear
+see ls
+bye
+ls ../assembler
+fload ../assem.fth
+fload ../assembler/assem.fth 
+ls ../assembler/assem.fth 
+fload ../assembler/assem.fth 
+fload assem.fth 
+ls
+bye
+: foo \ this is atest
+." see this " cr \ hello
+;
+see foo
+vector: here \ this is a test
+see here
+here
+vector: here 	\ this is a test
+nye
+bye
+see bar
+see foo
+: mumble ." This is mumble " cr ;
+' mumble is foo
+foo
+see bar
+' bar
+bye
+see foo
+bye
+alias bar foo
+see bar
+bar
+showstack
+clear
+foo
+bye
+alias bar foo
+bar
+bye
+h# f000 .
+;
+see foo
+state
+showstack
+@
+h# fooo
+h# f000
+clear
+foo
+clear
+foo
+clear
+forget foo
+: foo
+bye
+;
+clear
+showstack
+: foo
+h# f000
+;
+see foo
+see h#
+see literal
+see pad
+: foo
+[ h# f000 literal ]
+;
+see foo
+foo
+clear
+see h#
+see state
+: bar
+base( hex parse-word 2dup type interpret-word )base .s ;
+bar f000
+clear
+immediate
+see bar
+: foo 
+bar f000
+;
+see foo
+see interpret-word
+bye
+h# f000
+;
+see foo
+clear
+bye
+h# f000
+;
+see foo
+foo
+showstack
+clear
+foo . cr
+bye
+clear
+: foo
+" blurfle" r/w open-file
+;
+foo
+r/w
+strlen type cr
+bye
+" blurfle" r/w open-file
+;
+showstack
+clear
+foo
+drop
+: bar
+" this is a test of the emergency broadcasting system" 46620
+write-line
+;
+bar
+46620 close-file
+clear
+bye
+" hello"
+showstack
+clear
+" hello"
+ls
+bye
+ftest
+bye
+ftest
+bye
+clear
+d# 1024 allocate
+drop
+: bar
+" THis is s ate statetsadsdsg
+;
+bar
+2drop
+dup bar
+cmove
+dup 1b type
+bar type
+: foo
+   " blurfle" r/w open-file drop file !
+;
+variable file
+: foo
+;
+variable buffer
+buffer !
+: foo
+   " blurfle" r/w open-file drop file !
+buffer @ d# 1024 file @ write-file drop
+file @ close-file
+;
+foo
+clear
+bye
+see %g0
+%g0 u.
+%g1 u.
+fload asm.fth 
+showstack
+%g3 0
+rd
+clear
+%g3 0
+swap
+dup
+iregister?
+dro
+drop
+d# 28 >>
+drop
+d# 28
+>>
+see >>
+drop
+bye
+showstack
+clear
+%g3 0
+rd
+dup
+iregister?
+clear
+fload asm.fth 
+0 %g3 rd
+showstack
+%g3 0
+%g3
+showstack
+drop
+rd
+origin here -
+.d
+clear
+here origin - .d
+bye
+pwd
+see search-wordlist
+see (search-wordlist)
+showstack
+clear
+context
+#order 
+@
+cells
+bounds
+dup @
+: bar " @" ;
+bar
+rot
+3dup
+search-wordlist
+rot
+dup bar rot
+(search-wordlist)
+bar 53ff0
+(search-wordlist)
+bye
+showstack context #order @
+drop
+nip
+current
+@
+clear
+bar current @ 
+search-wordlist
+drop .name
+bar current @ (search-wordlist)
+bye
+bar current @ (search-wordlist)
+bye
+bar current @ (search-wordlist)
+showstack
+drop .name
+bye
+bar current * (search-wordlist)
+bar current @ (search-wordlist)
+showstack
+drop .name
+bye
+bar current @ (search-wordlist)
+showstack
+drop .name
+clear
+bar current @ search-wordlist
+drop .name cr
+bye
+bar current @ (search-wordlist)
+showstack
+drop .name cr
+clear
+bye
+dev
+fload see.fth 
+see see
+order
+clear
+order
+see order
+get-order
+showstack
+drop
+wordlist>xt
+see wordlist_.xt
+see wordlist>xt
+bye
+bye
+see included
+see fload
+bye
+include assem.fth 
+see cold-chain
+see-chain
+cold-chain
+tib
+showstack
+see tib
+see 'tib
+cold-chain
+see 'tib
+clear
+ls
+clear
+ls
+clear
+see ls
+see system-commanfd
+see system-command
+see (system)
+bye
+allocate
+showstack
+drop
+bye
+1 abort" Help"
+bye
+bye
+showstack
+clear
+1 abort" Help"
+bye
+1 abort" Help"
+bye
+bye
+showstack
+clear
+dead
+.d
+hex
+dead
+base @ .
+base @ .d cr
+3404
+34444
+clear
+300d
+bye
+dead
+clear
+d# 32 base !
+;jg
+sdfjkldfg
+clear
+d# 16 base !
+dead
+asgf
+bye
+clear
+dead
+dead.beef
+34.34
+bye
+dead
+dead.
+dead.beef
+bye
+deaf
+deag
+bye
+dead
+dead.d
+34445
+3445,44334
+bye
+dead.ff
+bye
+dead.beef
+deadbeefcafe
+bye
+dead.beef
+decimal
+dead
+deag
+ffff
+hex
+deag
+deah
+fff
+ggg
+clear
+fload asm.fth 
+incude asm.fth 
+include asm.fth 
+vi asm.fth 
+include assem.fth 
+: bar
+postpone postpone
+postpone compile
+;
+see bar
+bye
+postpone postpone 
+postpone compile
+;
+see bar
+bye
+see see
+see do-variable
+bye
+.s
+clear
+.s
+executable-name
+.s
+strlen
+.s
+executable-name dup strlen type
+executable-name dup strlen 
+.s
+clear
+executable-name dup strlen 
+.s
+type
+.s
+executable-name dup strlen 
+over c@ emit
+over 1+ c@ emit
+over 1+ c@ .
+bye
+bye
+drop
+.s
+see wordlist>xt
+bye
+clear
+showstack
+.s
+pwd
+get-order
+drop
+' user-matches?
+map-wordlist
+.s
+get-order drop 
+drop
+@
+dup
+drop
+' user-matches?
+execute
+clear
+get-order
+drop
+@ dup
+user-matches?
+drop
+bye
+showstack
+rot drop
+@
+.name
+dup @ 
+>link
+dup .name
+dup .name cr
+@
+dup .name cr
+hex
+dup user-matches?
+drop
+>link
+@
+dup .name cr
+>link
+@ 
+dup .name cr
+>link @ dup .name cr
+clear
+get-order drop
+drop
+' user-matches?
+map-wordlist
+: map-wordlist
+>r
+begin
+." BEGIN: " dup . cr
+@ 
+." @: " dup . cr
+dup while
+r@ over >r execute if
+r> r> drop true
+." FOUND IT: " cr exit
+then
+." Still looking" cr
+r> >link
+repeat
+." not found" cr
+r> 2drop false
+;
+get-order 2drop ' user-matches? map-wordlist
+see map-wordlist
+bye
+@
+.s
+get-order
+.s
+drop
+@
+.s
+bye
+forth-wordlist
+.s
+3 dump
+see dump
+forth-wordlist @ .
+clear
+forth-wordlist
+showstack
+dup @ 
+drop 10 dump
+bye
+showstack
+wordlist
+3 cells dump
+bye
+order
+bye
+get-order
+.s
+drop
+vocs
+bye
+bye
+forth
+showstack
+' forth 
+@
+get-order
+clear
+' forth >pfa
+cell+
+@
+' forth >body @ .
+bye
+do-does .s
+>does
+bye
+showstack
+do-create
+' forth @ 
+bye
+showstack
+' forth @ .s
+bye
+' foo vocabulary? .s
+clear
+bye
+bye
+' forth @ .
+vocabulary foo 
+' foo @ .
+' forth @ ' foo @ =
+.
+see vocabulary?
+' forth .
+' foo vocabulary?
+.s
+clear
+showstack
+get-order
+drop
+' forth
+user-matches?
+see user-matches?
+order
+drop
+' foo user-matches?
+forth-wordlist 
+drop
+clear
+get-order
+also
+clear
+get-order
+foo
+clear
+get-order
+clear
+words
+previous
+order
+words
+get-order 
+clear
+see words
+lastacf
+clear
+see lastacf
+see 'lastacf
+see previous
+see set-order
+sifting current
+@
+bye
+get-order
+showstack
+clear
+also foo
+get-order
+clear
+previous
+get-order
+clear
+current @ .
+also foo definitions
+get-order
+current @ 
+clear
+previous
+get-order
+current @
+clear
+definitions
+get-order current @
+clear
+also foo definitions
+: knr 
+." this is a test " cr
+;
+knr
+words
+previous definitions
+words
+see foo
+also foo
+words
+definitions
+words
+bye
+see foth
+see forth
+order
+executable-name dup strlen type
+bye
+order
+bye
+.s
+>body
+.s
+@
+.s
+8075b08 8075b08 1 8075b08 807d0f4
+user-matches?
+.s
+bye
+dead
+beef
+cafe
+showstack
+3
+dup 0<
+drop
+dup 
+drop
+nip
+bye
+bye
+vocabulary foo
+also foo
+order
+definitions
+order
+current @ .name
+current
+showstack
+nip
+wordlist>xt
+.s
+order
+words
+: knr ." this is atest" cr ;
+knr
+words
+order
+previous definitions
+order
+words
+also foo words
+definitions
+words
+previous definitions
+also foo
+order
+current wordlist>xt
+current @ wordlist>xt
+.name
+clear
+order
+definitions
+current @ wordlist>xt .name
+bye
+bye
+vocabulary foo
+also foo definitions
+order
+previous definitions
+order
+ls
+bye
+bye
+cat test.fth
+ls
+vi test.fth
+ftest
+ls -l
+ls -l blurfle 
+bye
+ftest
+see ftest
+bye
+bye
+h# 9000
+see h#
+9
+90
+987
+bye
+987
+deaf
+.s
+clear
+888
+.s
+89-
+890
+.s
+777
+.s
+765
+6579
+567
+65677
+6788
+98977
+1234
+12349
+bye
+[char] 0
+.s
+clear
+.s
+[char] 0
+.s
+: foo 
+[char] 0
+[char] 9 
+within ;
+see foo
+: '9' [char] 9 ;
+: '8' [char] 8 ;
+: '7' [char] 7 ;
+'7'
+showstack
+foo
+'9' foo
+'8' foo
+clear
+bye
+ftest
+bye
+ftest
+bye
+ftest
+bye
+ftest
+.s
+clear
+ftest
+bye
+see ftest
+bye
+see ftest
+ftest
+.s
+clear
+ftest
+PROT_READ .
+MAP_SHARED .
+.s
+file @
+.
+bye
+ftest
+.s
+clear
+bye
+ftest
+clear
+ftest
+bye
+ftest
+bye
+ftest
+.s
+clear
+bye
+ftest
+.s
+bye
+ftest
+bye
+ftest
+90000 
+@
+.
+dead 90000  !
+beef  90004  !
+bye
+ftest
+clear
+90000 @ .
+90004 @ .
+ls
+.s
+clear
+bye
+ftest
+bye
+ftest
+.s
+clear
+ftest
+cafe.babe
+.s
+91000 !
+90000 @ .
+90000 @ .h
+hex
+90000 @ .
+91000 @ .
+bye
+order
+words
+vocabulary assembler
+order
+also assembler definitions
+order
+bye
+words
+order
+words
+mov
+here .
+mov
+here .
+see c,
+see mov
+see opcode:
+bye
+see 'lastacf
+bye
+bye
+bye
+.s
+clear
+debug @
+.
+true
+showstack
+is debug
+debug @ .
+debug ?
+clear
+debug ?
+bye
+bye
+headers
+order
+vocs
+see /tib
+here .
+origin .
+here origin - .d
+pid
+$$
+bye
+bye
+bye
+bye
+foo
+see foo
+bye
+see words
+words
+here origin - .d
+: bar ." this is  atest" cr ; 
+bar
+here origin - .d
+bye
+dead foo: bar
+' bar 10 dump
+' bar 10 ldump
+dump
+' bar @ .name
+' bar @ 10 dump
+bye
+3 actions
+.s
+showstack
+action: @ ; 
+action: ! ;
+action: ;
+: bar: create , use-actions ;
+bar: baz
+' baz @ .
+bye
+include x86/assem.fth 
+words
+bye
+foo
+: bar ." Hello " ;
+' bar is foo
+foo
+see foo
+bye
+$$ .
+$$ .d
+pid
+bye

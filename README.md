@@ -7,6 +7,8 @@ I wrote this a few years ago as a demonstration of a Forth interpreter
 entirely in C.  It is a pseudo-ITC implementation. This is still a 
 work in progress.
 
+This will only build on 32 bit machines currently.
+
 --------------------------
 
 NOTES:

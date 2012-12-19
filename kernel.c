@@ -54,7 +54,7 @@ wordlist *forth;
 
 /* This should be lastacf(wordlist) ((ACF)((wordlist)->_lastacf)) */
 #define lastacf ((ACF)(forth->_lastacf))
-#define dp      ((Cell)(forth->_dp))
+#define dp      (forth->_dp)
 
 /* User Area Support */
 
@@ -249,9 +249,11 @@ Dprintf( char *s ) {
 void place_string( char *s ) {
     int length = (strlen(s) & 0xff);
 
-    *((char*)dp++) = (char)length;
+    char *p = (char *)dp;
+    *p = (unsigned char)length;
+    dp++;
     strncpy( (char*)dp, s, length );
-    ((char*)dp) += length;
+    dp += length;
     align();
 }
 
@@ -260,7 +262,7 @@ void place_string( char *s ) {
 void place_cstring( char *s ) {
     int length = strlen(s);
     strncpy( (char*)dp, s, length+1 );
-    ((char*)dp) += length;
+    dp += length;
     align();
 }
 
@@ -315,7 +317,7 @@ ACF find( char *name ) {
         acf = previous(acf);
         if ( acf == 0 ) {
             fprintf( stderr, "Error: find(%s) not found.\n", name );
-            place( loseacf );
+            place( (Cell)loseacf );
             place_cstring( name );
             return loseacf;  /* do I want this here?? */
         }
@@ -325,7 +327,7 @@ ACF find( char *name ) {
 
 /**
  */
-void c( char *name ) { place( find(name) ); }
+void c( char *name ) { place( (Cell)find(name) ); }
 
 /* change namelen byte to set high bit */
 void immediate() { ANF name = to_name( lastacf ); *name |= 0x80; }
@@ -336,7 +338,7 @@ void DotQuote( s )      char *s; { c("(.\")");     place_string(s); }
 void StringLiteral( s ) char *s; { c("(\")");      place_string(s); }
 void Abort( s )         char *s; { c("(abort\")"); place_string(s); }
 
-void Recurse()      { place(lastacf); }
+void Recurse()      { place((Cell)lastacf); }
 void TailRecurse()  { c("r>"); c("drop"); Recurse(); }
 
 void End()                { c("unnest"); reveal(); }
@@ -383,7 +385,7 @@ Header( char *name ) {
      * set the lastacf global to the current code field
      * address (ACF).
      */
-    lastacf = dp;             /* save current acf */
+    forth->_lastacf = dp;             /* save current acf */
 }
 
 /**
@@ -392,7 +394,7 @@ codefield
 CodeField( char *name, PFV f ) {
     codefield cf;
     Header( name );
-    place( do_create );
+    place( (Cell)do_create );
     cf = (codefield)dp;
     place( (Cell)f );
     return cf;
@@ -464,7 +466,7 @@ init_compiler( int dictsize ) {
     forth         = (wordlist *)malloc( sizeof(wordlist) );
     forth->origin = (Cell)malloc( (size_t)dictsize );
     dp            = forth->origin;
-    lastacf       = (Cell)0;
+    forth->_lastacf = (Cell)0;
 
     Header( "do-create" );
     place( (Cell)(dp + sizeof(Cell)) );

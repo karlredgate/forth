@@ -32,6 +32,7 @@
 
 #include "linenoise.h"
 #include "compiler.h"
+#include "kernel.h"
 
    /* ICK - do this here for now, but remove when we do our own
       readline  - see below in interpreter words for other ICK*/

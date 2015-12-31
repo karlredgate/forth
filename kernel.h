@@ -21,50 +21,19 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/** \file stack.c
- * \brief Stack Manipulation words
+/** \file kernel.h
+ * \brief forth kernel
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "compiler.h"
-#include "kernel.h"
 
-/**
- */
-void
-compile_stack_words() {
-    Variable( "sp0" );
-    Variable( "rp0" );
+inline void push( n ) Cell n; { *(--sp) = tos; tos = n; }
+inline Cell pop()             { Cell scr = tos; tos = *(sp++); return scr; }
+ 
+void DotQuote( char * );
+void Tick( char * );
 
-    Colon( "depth" );
-          c("sp@"); c("sp0"); c("@"); c("swap"); c("-");
-          c("/cell"); c("/"); End();
-    Colon( "clear" );
-          c("sp0"); c("@"); c("sp!"); End();
-
-    Colon( "check-stack" );
-          c("depth"); c("0<"); If();
-             DotQuote("Stack underflow."); c("cr"); c("clear");
-          Then(); End();
-
-    Colon( "(.s)" );
-          /* FIX - this next line should be replaced with using ?do below */
-          c("depth"); c("0="); If(); c("exit"); Then();
-          c("depth"); c("dup"); c("0"); Do();
-             c("dup"); c("pick"); c("u.");
-             c("1-");
-          Loop(); c("drop"); End();
-    Colon( ".s" );
-          c("check-stack");
-          c("depth"); c("0="); If();
-             DotQuote("Empty."); c("cr"); c("exit");
-          Then();
-          c("(.s)"); c("cr"); End();
-
-    Variable( "showstack?" );
-    Colon( "showstack" ); c("showstack?"); c("toggle"); End();
-}
-
-/*
- * vim:autoindent
- * vim:expandtab
- */
+/* vim: set autoindent expandtab : */

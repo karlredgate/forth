@@ -29,6 +29,9 @@
  * words implement NEXT (the inner or address interpreter).
  */
 
+#include <stdio.h>
+#include <string.h>
+
 #include "compiler.h"
 
 /**

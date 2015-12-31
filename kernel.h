@@ -31,6 +31,6 @@ void DotQuote( char * );
 void Tick( char * );
 void place_cstring( char * );
 void immediate();
-Primitive( char *, PFV );
+void Primitive( char *, PFV );
 
 /* vim: set autoindent expandtab : */

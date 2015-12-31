@@ -25,17 +25,12 @@
  * \brief forth kernel
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "compiler.h"
 
-inline void push( n ) Cell n; { *(--sp) = tos; tos = n; }
-inline Cell pop()             { Cell scr = tos; tos = *(sp++); return scr; }
- 
 void DotQuote( char * );
 void Tick( char * );
 void place_cstring( char * );
 void immediate();
+Primitive( char *, PFV );
 
 /* vim: set autoindent expandtab : */

@@ -117,7 +117,7 @@ init_dictionary(int dictsize) {
 
     Variable( "argument-hook" );
     /* To( Tick("ndrop"), "argument-hook" ); */
-    To( Tick("exit"), "argument-hook" );
+    To( (Cell)find("exit"), "argument-hook" );
 
     Colon( "cold" );
           c(".version");

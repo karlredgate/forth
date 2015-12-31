@@ -27,10 +27,12 @@
 
 #include "compiler.h"
 
+ACF find( char * );
 void DotQuote( char * );
 void Tick( char * );
 void place_cstring( char * );
 void immediate();
 void Primitive( char *, PFV );
+void To( Cell, char * );
 
 /* vim: set autoindent expandtab : */

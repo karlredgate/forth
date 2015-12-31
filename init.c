@@ -26,6 +26,8 @@
  */
 
 #include "compiler.h"
+#include "kernel.h"
+#include "controlflow.h"
 
 extern void init_compiler();
 extern void memory_words();

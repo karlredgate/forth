@@ -21,21 +21,22 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/** \file kernel.h
- * \brief forth kernel
+
+/** \file controlflow.h
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "compiler.h"
+void Begin();
+void If();
+void While();
+void Ahead();
+void Until();
+void Again();
+void Then();
+void Repeat();
+void Else();
+void Do();
+void QuestDo();
+void Loop();
+void PlusLoop();
 
-inline void push( n ) Cell n; { *(--sp) = tos; tos = n; }
-inline Cell pop()             { Cell scr = tos; tos = *(sp++); return scr; }
- 
-void DotQuote( char * );
-void Tick( char * );
-void place_cstring( char * );
-void immediate();
-
-/* vim: set autoindent expandtab : */
+/* vim: set autoindent expandtab */

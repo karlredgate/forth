@@ -26,6 +26,8 @@
  */
 
 #include "compiler.h"
+#include "kernel.h"
+#include "controlflow.h"
 
 /**
  */

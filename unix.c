@@ -38,6 +38,7 @@
 extern int errno;
 
 #include "compiler.h"
+#include "kernel.h"
 
 /**
  */

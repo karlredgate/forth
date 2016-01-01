@@ -535,7 +535,4 @@ StartVM( char *start_word, int argc, char **argv ) {
     }
 }
 
-/*
- * vim:autoindent
- * vim:expandtab
- */
+/* vim: set autoindent expandtab : */

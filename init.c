@@ -28,6 +28,7 @@
 #include "compiler.h"
 #include "kernel.h"
 #include "controlflow.h"
+#include "platform.h"
 
 extern void init_compiler();
 extern void memory_words();
@@ -50,8 +51,6 @@ extern void implementation_words();
 extern void vocabulary_words();
 extern void interpreter_words();
 extern void exception_words();
-
-extern void unix_words();
 
 /** \brief Load all the initial dictionary words.
  */
@@ -79,7 +78,7 @@ init_dictionary(int dictsize) {
     vocabulary_words();
     interpreter_words();
 
-    unix_words();
+    platform_words();
 /* FIX - NEED TO DO THESE */
 //   Primitive( "d<",     &lesser );      /* ( d1 d2 -- f ) */
 //   Primitive( "d>",     &lesser );      /* ( d1 d2 -- f ) */

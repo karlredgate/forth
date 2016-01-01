@@ -1,29 +1,31 @@
 CC=gcc
 CFLAGS=-g -O
 
+OBJS  = kernel.o
+OBJS += forthcore.o
+OBJS += controlflow.o
+OBJS += dictionary.o
+OBJS += double.o
+OBJS += exception.o
+OBJS += format.o
+OBJS += implementation.o
+OBJS += init.o
+OBJS += interpreter.o
+OBJS += primitives.o
+OBJS += stack.o
+OBJS += string.o
+OBJS += vocabulary.o
+OBJS += linenoise.o
+OBJS += file.o
+OBJS += memory.o
+
 include $(shell uname -s).mk
 
 INCLUDES= compiler.h
-OBJS= \
-	linenoise.o \
-	kernel.o \
-	forthcore.o \
-	controlflow.o \
-	dictionary.o \
-	double.o \
+NOBJS= \
 	elf.o \
-	exception.o \
 	file.o \
-	format.o \
-	implementation.o \
-	init.o \
-	interpreter.o \
-	primitives.o \
-	stack.o \
-	string.o \
-	vocabulary.o \
 	memory.o \
-	unix.o \
 	signal.o \
 	main.o
 

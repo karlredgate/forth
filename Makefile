@@ -1,6 +1,7 @@
 CC=gcc
 CFLAGS=-g -O
 
+include $(shell uname -s).mk
 
 INCLUDES= compiler.h
 OBJS= \

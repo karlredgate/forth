@@ -2,6 +2,7 @@ CC=gcc
 CFLAGS=-g -O
 
 include $(shell uname -s).mk
+include $(shell uname -m).mk
 
 INCLUDES= compiler.h
 OBJS= \

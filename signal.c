@@ -34,6 +34,13 @@
    function name for the PC and nPC values.
  */
 
+/*
+  /usr/include/ucontext.h:43:2: error: The deprecated ucontext routines require _XOPEN_SOURCE to be defined
+  #error The deprecated ucontext routines require _XOPEN_SOURCE to be defined
+*/
+
+#define _XOPEN_SOURCE 700
+
 #include <signal.h>
 /* #include <siginfo.h> */
 #include <ucontext.h>

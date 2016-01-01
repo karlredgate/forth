@@ -61,7 +61,8 @@ static void _getenv() {  /* ( adr len -- adr len true | false ) */
     char *val;
 
     strncpy( name, (char*)*sp, (int)tos );
-    if ( val = getenv(name) ) {
+    val = getenv( name );
+    if ( val != NULL ) {
         *sp = (Cell)val;
         tos = strlen(val);
         push( TRUE );
@@ -199,8 +200,8 @@ void unix_words() {
     Constant( "SIGPIPE",   (Cell)SIGPIPE );
     Constant( "SIGALRM",   (Cell)SIGALRM );
     Constant( "SIGTERM",   (Cell)SIGTERM );
-    Constant( "SIGSTKFLT", (Cell)SIGSTKFLT );
-    Constant( "SIGCLD",    (Cell)SIGCLD );
+    // Constant( "SIGSTKFLT", (Cell)SIGSTKFLT );
+    // Constant( "SIGCLD",    (Cell)SIGCLD );
     Constant( "SIGCHLD",   (Cell)SIGCHLD );
     Constant( "SIGCONT",   (Cell)SIGCONT );
     Constant( "SIGSTOP",   (Cell)SIGSTOP );

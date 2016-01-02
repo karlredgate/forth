@@ -1,6 +1,6 @@
 
 OBJS += darwin.o
 OBJS += posix.o
-OBJS += signal.o
+OBJS += basic_signal.o
 OBJS += main.o
 

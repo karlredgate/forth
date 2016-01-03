@@ -44,13 +44,16 @@ also decompiler definitions
 ;
 : .:
    ." : " dup .name cr
+   dup
    tab >body
    begin
       dup @ ['] unnest <> while
       dup @ .type
       ta1+
    repeat
-   drop cr ." ;" cr
+   drop cr ." ; "
+   immediate? if ." immediate" then
+   cr
 ;
 previous definitions
 

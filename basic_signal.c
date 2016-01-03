@@ -48,6 +48,7 @@
 #include <setjmp.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <execinfo.h>
 
 static jmp_buf env;
 
@@ -71,17 +72,26 @@ SIGSEGV_handler( int signal, siginfo_t *info, void *data ) {
     fflush( stdout );
     switch (info->si_code) {
     case SEGV_MAPERR:
-        fprintf( stderr, "\nSEGV: Address not mapped to object 0x%p\n",
+        fprintf( stderr, "\nSEGV: Address not mapped to object %p\n",
                 info->si_addr );
         break;
     case SEGV_ACCERR:
-        fprintf( stderr, "\nSEGV: Invalid permissions for mapped object 0x%p\n",
+        fprintf( stderr, "\nSEGV: Invalid permissions for mapped object %p\n",
                 info->si_addr );
         break;
     default:
         fprintf( stderr, "Unknown signal code.\n" );
         exit(0);
     }
+
+    void *pointers[256];
+    int frame_count = 0;
+    frame_count = backtrace( pointers, sizeof(pointers) );
+    char **frames = backtrace_symbols( pointers, frame_count );
+    for ( int i = 0 ; i < frame_count ; ++i ) {
+        fprintf( stderr, "frame(%03d): %s\n", i, frames[i] );
+    }
+
     exit( -1 );
     longjmp(env,signal);
 }
@@ -95,15 +105,15 @@ SIGBUS_handler( int signal, siginfo_t *info, void *data ) {
     fflush( stdout );
     switch (info->si_code) {
     case BUS_ADRALN:
-        fprintf( stderr, "\nBUSERR: Invalid address alignment 0x%p\n",
+        fprintf( stderr, "\nBUSERR: Invalid address alignment %p\n",
                  info->si_addr );
         break;
     case BUS_ADRERR:
-        fprintf( stderr, "\nBUSERR: Non-existent physical address 0x%p\n",
+        fprintf( stderr, "\nBUSERR: Non-existent physical address %p\n",
                  info->si_addr );
         break;
     case BUS_OBJERR:
-        fprintf( stderr, "\nBUSERR: Object specific hardware error 0x%p\n",
+        fprintf( stderr, "\nBUSERR: Object specific hardware error %p\n",
                  info->si_addr );
         break;
     default:

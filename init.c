@@ -25,6 +25,8 @@
  * \brief Initialize the dictionary
  */
 
+#include <stdio.h>
+
 #include "compiler.h"
 #include "kernel.h"
 #include "controlflow.h"
@@ -116,7 +118,8 @@ init_dictionary(int dictsize) {
 
     Variable( "argument-hook" );
     /* To( Tick("ndrop"), "argument-hook" ); */
-    To( (Cell)find("exit"), "argument-hook" );
+    ACF x = find("unnest");
+    To( (Cell)x, "argument-hook" );
 
     Colon( "cold" );
           c(".version");
@@ -136,10 +139,12 @@ init_dictionary(int dictsize) {
              DotQuote("done."); c("cr");
           Then();
           c("hex");
+#if 0
           c("argument-hook"); c("@"); Tick("execute"); c("catch");
           c("?aborted"); If();
               DotQuote("argument-hook failed"); c("cr");
           Then();
+#endif
           c("read-eval-loop"); End();
 
     Colon( "warm" );

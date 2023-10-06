@@ -31,6 +31,7 @@ ACF find( char * );
 void DotQuote( char * );
 void Tick( char * );
 void place_cstring( char * );
+void place( Cell );
 void immediate();
 void Primitive( char *, PFV );
 void To( Cell, char * );

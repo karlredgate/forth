@@ -212,16 +212,16 @@ print_stack() {
 
     fprintf( stderr, " (" );
     for ( p = (sp0-1) ; p >= sp ; p-- ) {
-        fprintf( stderr, " %x", *p );
+        fprintf( stderr, " %lx", *p );
     }
-    if ( sp <= sp0 )  fprintf( stderr, " %x", tos );
+    if ( sp <= sp0 )  fprintf( stderr, " %lx", tos );
     fprintf( stderr, " )\n" );
 
     fprintf( stderr, " ( R:" );
     for ( p = rp0 ; p <= rp ; p++ ) {
-        fprintf( stderr, " %x", *p );
+        fprintf( stderr, " %lx", *p );
     }
-    fprintf( stderr, " ) ip=%x\n", ip );
+    fprintf( stderr, " ) ip=%lx\n", ip );
 }
 
 /**

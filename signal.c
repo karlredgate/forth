@@ -78,18 +78,18 @@ SIGSEGV_handler( int signal, siginfo_t *info, void *data ) {
     fflush( stdout );
     switch (info->si_code) {
     case SEGV_MAPERR:
-        fprintf( stderr, "\nSEGV: Address not mapped to object 0x%x\n",
+        fprintf( stderr, "\nSEGV: Address not mapped to object 0x%p\n",
                 info->si_addr );
         break;
     case SEGV_ACCERR:
-        fprintf( stderr, "\nSEGV: Invalid permissions for mapped object 0x%x\n",
+        fprintf( stderr, "\nSEGV: Invalid permissions for mapped object 0x%p\n",
                 info->si_addr );
         break;
     default:
         fprintf( stderr, "Unknown signal code.\n" );
         exit(0);
     }
-    dump_registers( context->uc_mcontext.gregs );
+    dump_registers( context->uc_mcontext.__gregs );
     longjmp(env,signal);
 }
 
@@ -102,22 +102,22 @@ SIGBUS_handler( int signal, siginfo_t *info, void *data ) {
     fflush( stdout );
     switch (info->si_code) {
     case BUS_ADRALN:
-        fprintf( stderr, "\nBUSERR: Invalid address alignment 0x%x\n",
+        fprintf( stderr, "\nBUSERR: Invalid address alignment 0x%p\n",
                  info->si_addr );
         break;
     case BUS_ADRERR:
-        fprintf( stderr, "\nBUSERR: Non-existent physical address 0x%x\n",
+        fprintf( stderr, "\nBUSERR: Non-existent physical address 0x%p\n",
                  info->si_addr );
         break;
     case BUS_OBJERR:
-        fprintf( stderr, "\nBUSERR: Object specific hardware error 0x%x\n",
+        fprintf( stderr, "\nBUSERR: Object specific hardware error 0x%p\n",
                  info->si_addr );
         break;
     default:
         fprintf( stderr, "Unknown signal code.\n" );
         exit(0);
     }
-    dump_registers( context->uc_mcontext.gregs );
+    dump_registers( context->uc_mcontext.__gregs );
     longjmp(env,signal);
 }
 
